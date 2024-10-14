@@ -10,7 +10,7 @@ import '../products/product_detail.dart';
 
 class SearchPage extends StatefulWidget {
   final String search;
-  const SearchPage({Key? key, required this.search}) : super(key: key);
+  const SearchPage({super.key, required this.search});
 
   @override
   _SearchPageState createState() => _SearchPageState();

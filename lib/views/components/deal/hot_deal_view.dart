@@ -10,7 +10,7 @@ import '/controllers/product_notifier.dart';
 import 'product_card.dart';
 
 class HotDealView extends StatelessWidget {
-  const HotDealView({Key? key}) : super(key: key);
+  const HotDealView({super.key});
 
   @override
   Widget build(BuildContext context) {

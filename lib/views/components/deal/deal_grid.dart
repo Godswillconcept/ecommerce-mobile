@@ -8,7 +8,7 @@ import '/controllers/product_notifier.dart';
 import 'product_card.dart';
 
 class DealGrid extends StatelessWidget {
-  const DealGrid({Key? key}) : super(key: key);
+  const DealGrid({super.key});
 
   @override
   Widget build(BuildContext context) {

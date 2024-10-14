@@ -14,7 +14,7 @@ import '../../../models/user.dart';
 import '../../utils/constant.dart';
 
 class UserScreen extends StatefulWidget {
-  UserScreen({Key? key}) : super(key: key);
+  UserScreen({super.key});
 
   @override
   State<UserScreen> createState() => _UserScreenState();

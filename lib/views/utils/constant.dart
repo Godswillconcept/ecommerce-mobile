@@ -19,11 +19,11 @@ class AppLargeText extends StatelessWidget {
   final Color color;
   final double size;
   const AppLargeText({
-    Key? key,
+    super.key,
     required this.text,
     required this.color,
     this.size = 30.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +43,7 @@ class AppText extends StatelessWidget {
   final Color color;
   final double size;
   const AppText(
-      {Key? key, required this.text, required this.color, required this.size})
-      : super(key: key);
+      {super.key, required this.text, required this.color, required this.size});
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +63,12 @@ class DynamicButton extends StatelessWidget {
   bool? isResponsive;
   final void Function()? onPressed;
   DynamicButton({
-    Key? key,
+    super.key,
     required this.text,
     this.isResponsive = false,
     required this.onPressed,
     required this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

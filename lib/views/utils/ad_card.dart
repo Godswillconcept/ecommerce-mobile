@@ -5,8 +5,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 class AdCard extends StatefulWidget {
   AdCard({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<AdCard> createState() => _AdCardState();

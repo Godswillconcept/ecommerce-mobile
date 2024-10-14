@@ -12,7 +12,7 @@ import '../../../services/request.dart';
 
 class ProductDetail extends StatefulWidget {
   final Product product;
-  const ProductDetail({Key? key, required this.product}) : super(key: key);
+  const ProductDetail({super.key, required this.product});
 
   @override
   State<ProductDetail> createState() => _ProductDetailState();
@@ -88,7 +88,7 @@ class _ProductDetailState extends State<ProductDetail> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Colors.amber,
                         ),
                       ),
                     ],

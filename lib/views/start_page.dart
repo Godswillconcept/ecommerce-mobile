@@ -17,7 +17,7 @@ import 'nav-pages/order_page.dart';
 import 'nav-pages/offer_page.dart';
 
 class StartPage extends StatefulWidget {
-  const StartPage({Key? key}) : super(key: key);
+  const StartPage({super.key});
 
   @override
   _StartPageState createState() => _StartPageState();

@@ -14,14 +14,14 @@ class OrderItem extends StatelessWidget {
   final String status;
   final DateTime orderDate;
   const OrderItem({
-    Key? key,
+    super.key,
     required this.details,
     required this.image,
     required this.product,
     required this.total,
     required this.status,
     required this.orderDate,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

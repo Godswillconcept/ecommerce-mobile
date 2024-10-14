@@ -9,8 +9,7 @@ class Addon extends StatelessWidget {
   final String title;
   final Widget page;
   const Addon(
-      {Key? key, required this.icon, required this.title, required this.page})
-      : super(key: key);
+      {super.key, required this.icon, required this.title, required this.page});
 
   @override
   Widget build(BuildContext context) {

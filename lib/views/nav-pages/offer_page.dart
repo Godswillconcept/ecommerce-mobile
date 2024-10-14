@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../utils/constant.dart';
 
 class OfferPage extends StatefulWidget {
-  const OfferPage({Key? key}) : super(key: key);
+  const OfferPage({super.key});
 
   @override
   _OfferPageState createState() => _OfferPageState();

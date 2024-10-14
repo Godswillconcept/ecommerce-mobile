@@ -7,7 +7,7 @@ import 'package:ecommerce/views/utils/constant.dart';
 import '../../controllers/order_notifier.dart';
 
 class OrderPage extends StatefulWidget {
-  OrderPage({Key? key}) : super(key: key);
+  OrderPage({super.key});
 
   @override
   _OrderPageState createState() => _OrderPageState();

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '../../../controllers/product_notifier.dart';
 
 class CategoryItem extends StatelessWidget {
-  CategoryItem({Key? key}) : super(key: key);
+  CategoryItem({super.key});
 
   @override
   Widget build(BuildContext context) {

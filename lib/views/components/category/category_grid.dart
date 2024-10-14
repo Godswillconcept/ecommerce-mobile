@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 
 class CategoryGrid extends StatefulWidget {
-  const CategoryGrid({Key? key}) : super(key: key);
+  const CategoryGrid({super.key});
 
   @override
   State<CategoryGrid> createState() => _CategoryGridState();

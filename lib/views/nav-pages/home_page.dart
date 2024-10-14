@@ -8,10 +8,10 @@ import '../components/category/category_toggle.dart';
 import '../components/deal/hot_deal_view.dart';
 import '../utils/ad_card.dart';
 import '../components/deal/deal_grid.dart';
-import '../utils/item_card.dart';
+import '../utils/new_arrivals.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 bottom: 10,
                                 // top: 10,
                               ),
-                              child: ItemCard(),
+                              child: NewArrivals(),
                             ),
                           ],
                         ),

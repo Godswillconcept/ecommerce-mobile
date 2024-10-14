@@ -9,7 +9,7 @@ import '../../../services/request.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
-  ProductCard({Key? key, required this.product}) : super(key: key);
+  ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {

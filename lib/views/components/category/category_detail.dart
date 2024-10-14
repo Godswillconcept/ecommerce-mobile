@@ -12,7 +12,7 @@ import '../products/product_detail.dart';
 
 class CategoryDetail extends StatefulWidget {
   final Category category;
-  const CategoryDetail({Key? key, required this.category}) : super(key: key);
+  const CategoryDetail({super.key, required this.category});
 
   @override
   State<CategoryDetail> createState() => _CategoryDetailState();
