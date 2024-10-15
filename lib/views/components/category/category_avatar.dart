@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:ecommerce/services/request.dart';
+import 'package:store_hive/services/request.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/category.dart';

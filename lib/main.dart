@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:ecommerce/views/components/profile/user_screen.dart';
-import 'package:ecommerce/views/nav-pages/order_page.dart';
+import 'package:store_hive/views/components/profile/user_screen.dart';
+import 'package:store_hive/views/nav-pages/order_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
-import 'package:ecommerce/models/cart.dart';
+import 'package:store_hive/models/cart.dart';
 
 import 'controllers/cart_notifier.dart';
 import 'controllers/category_notifier.dart';
@@ -119,7 +119,7 @@ class MyApp extends StatelessWidget {
           return const StartPage();
         },
         "/profile": (context) {
-          return  UserScreen();
+          return UserScreen();
         },
         "/orders": (context) {
           return OrderPage();

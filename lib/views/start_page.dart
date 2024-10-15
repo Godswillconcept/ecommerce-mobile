@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, library_private_types_in_public_api
 
-import 'package:ecommerce/controllers/cart_notifier.dart';
-import 'package:ecommerce/controllers/order_notifier.dart';
-import 'package:ecommerce/services/request.dart';
+import 'package:store_hive/controllers/cart_notifier.dart';
+import 'package:store_hive/controllers/order_notifier.dart';
+import 'package:store_hive/services/request.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:hive/hive.dart';

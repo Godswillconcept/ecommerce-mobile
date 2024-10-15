@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, library_private_types_in_public_api, prefer_const_constructors, avoid_print, use_build_context_synchronously
 
-import 'package:ecommerce/models/login.dart';
-import 'package:ecommerce/models/user.dart';
+import 'package:store_hive/models/login.dart';
+import 'package:store_hive/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
@@ -174,10 +174,10 @@ class _LoginPageState extends State<LoginPage> {
                         _loginUser();
                       },
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all<Size>(
+                        minimumSize: WidgetStateProperty.all<Size>(
                           Size(double.infinity, 50),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           Color(0xff003cc5),
                         ),
                       ),

@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
-import 'package:ecommerce/controllers/cart_notifier.dart';
-import 'package:ecommerce/models/product.dart';
-import 'package:ecommerce/models/review.dart';
+import 'package:store_hive/controllers/cart_notifier.dart';
+import 'package:store_hive/models/product.dart';
+import 'package:store_hive/models/review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:hive/hive.dart';

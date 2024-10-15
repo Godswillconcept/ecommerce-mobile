@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:ecommerce/views/components/search/search_page.dart';
+import 'package:store_hive/views/components/search/search_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/constant.dart';

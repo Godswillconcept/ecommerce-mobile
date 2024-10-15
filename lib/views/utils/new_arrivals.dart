@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 
-import 'package:ecommerce/views/utils/constant.dart';
+import 'package:store_hive/views/utils/constant.dart';
 import 'package:flutter/material.dart';
 import '../../models/product.dart';
 import '../../services/request.dart';
@@ -44,7 +44,7 @@ class _NewArrivalsState extends State<NewArrivals> {
                 5,
                 (i) {
                   final product = productList[i];
-                  return InkWell( 
+                  return InkWell(
                     onTap: (() {
                       print(product.name);
                     }),

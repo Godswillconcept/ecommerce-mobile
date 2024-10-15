@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
-import 'package:ecommerce/views/components/deal/product_card.dart';
+import 'package:store_hive/views/components/deal/product_card.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ecommerce/views/utils/constant.dart';
+import 'package:store_hive/views/utils/constant.dart';
 
 import '../../../models/category.dart';
 import '../../../models/product.dart';
@@ -122,7 +122,7 @@ class _CategoryDetailState extends State<CategoryDetail> {
                                             bottom: 10,
                                           ),
                                           child: ProductCard(
-                                          product: product,
+                                            product: product,
                                           ),
                                         ),
                                       );

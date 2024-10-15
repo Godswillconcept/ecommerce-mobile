@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, library_private_types_in_public_api, unused_local_variable
 
-import 'package:ecommerce/views/components/order/order_item.dart';
+import 'package:store_hive/views/components/order/order_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ecommerce/views/utils/constant.dart';
+import 'package:store_hive/views/utils/constant.dart';
 import '../../controllers/order_notifier.dart';
 
 class OrderPage extends StatefulWidget {
@@ -175,7 +175,9 @@ class _OrderPageState extends State<OrderPage> {
               );
             },
             separatorBuilder: (BuildContext context, int index) {
-              return Divider(thickness: 2, );
+              return Divider(
+                thickness: 2,
+              );
             },
           ),
         );
@@ -210,14 +212,16 @@ class _OrderPageState extends State<OrderPage> {
               );
             },
             separatorBuilder: (BuildContext context, int index) {
-              return Divider(thickness: 3, );
+              return Divider(
+                thickness: 3,
+              );
             },
           ),
         );
       case "processing":
         return Container(
           margin: EdgeInsets.only(top: 10),
-        child:  ListView.separated(
+          child: ListView.separated(
             itemCount: processingOrders.length,
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -244,16 +248,16 @@ class _OrderPageState extends State<OrderPage> {
               );
             },
             separatorBuilder: (BuildContext context, int index) {
-              return Divider(thickness: 3, );
+              return Divider(
+                thickness: 3,
+              );
             },
           ),
-        
-        
         );
       case "delivered":
         return Container(
           margin: EdgeInsets.only(top: 10),
-        child:   ListView.separated(
+          child: ListView.separated(
             itemCount: deliveredOrders.length,
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -280,11 +284,11 @@ class _OrderPageState extends State<OrderPage> {
               );
             },
             separatorBuilder: (BuildContext context, int index) {
-              return Divider(thickness: 3, );
+              return Divider(
+                thickness: 3,
+              );
             },
           ),
-        
-        
         );
       default:
         return Container();

@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, library_private_types_in_public_api
 
-import 'package:ecommerce/views/components/search/search_box.dart';
+import 'package:store_hive/views/components/search/search_box.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/views/utils/constant.dart';
+import 'package:store_hive/views/utils/constant.dart';
 import '../components/category/category_grid.dart';
 import '../components/category/category_toggle.dart';
 import '../components/deal/hot_deal_view.dart';

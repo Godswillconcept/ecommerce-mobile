@@ -366,10 +366,10 @@ class _SignupPageState extends State<SignupPage> {
                         _signupUser();
                       },
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all<Size>(
+                        minimumSize: WidgetStateProperty.all<Size>(
                           Size(double.infinity, 50),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           Color(0xff003cc5),
                         ),
                       ),
@@ -504,7 +504,7 @@ class _SignupPageState extends State<SignupPage> {
 
       final response = await post('signup', formData);
       if (response.data['success'] != null) {
-          _userBox.add(User.fromMap(response.data['success']));
+        _userBox.add(User.fromMap(response.data['success']));
         final userId = _userBox.values.elementAt(0).id;
         final orderNotifier =
             Provider.of<OrderNotifier>(context, listen: false);

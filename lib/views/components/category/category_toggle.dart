@@ -1,4 +1,4 @@
-import 'package:ecommerce/models/category.dart';
+import 'package:store_hive/models/category.dart';
 import 'package:flutter/material.dart';
 import '../../../services/request.dart';
 import 'category_detail.dart';

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:ecommerce/views/utils/constant.dart';
+import 'package:store_hive/views/utils/constant.dart';
 
 import '../products/product_detail.dart';
 import '/controllers/product_notifier.dart';

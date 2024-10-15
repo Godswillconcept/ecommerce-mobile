@@ -1,11 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
 
-import 'package:ecommerce/models/product.dart';
-import 'package:ecommerce/services/request.dart';
+import 'package:store_hive/models/product.dart';
+import 'package:store_hive/services/request.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../../controllers/product_notifier.dart';
 import '../components/deal/product_card.dart';
 import '../components/products/product_detail.dart';
 

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
 
-import 'package:ecommerce/controllers/order_notifier.dart';
-import 'package:ecommerce/services/request.dart';
+import 'package:store_hive/controllers/order_notifier.dart';
+import 'package:store_hive/services/request.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive/hive.dart';

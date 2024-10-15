@@ -1,19 +1,17 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:ecommerce/controllers/category_notifier.dart';
+import 'package:store_hive/controllers/category_notifier.dart';
 import 'package:provider/provider.dart';
 import '../../../../services/request.dart';
 import '../../../models/category.dart';
-import 'package:ecommerce/views/components/category/category_detail.dart';
+import 'package:store_hive/views/components/category/category_detail.dart';
 
 class NestedExpansionTile extends StatelessWidget {
   const NestedExpansionTile({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-
     return Consumer<CategoryNotifier>(
       builder: (context, categoryNotifier, child) {
         final categories = categoryNotifier.categoryList;
@@ -23,7 +21,6 @@ class NestedExpansionTile extends StatelessWidget {
             final category = categories[index];
             return buildExpansionTiles(category, context);
           },
-         
         );
       },
     );

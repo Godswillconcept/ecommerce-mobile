@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 
-import 'package:ecommerce/views/components/deal/product_card.dart';
+import 'package:store_hive/views/components/deal/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../controllers/product_notifier.dart';

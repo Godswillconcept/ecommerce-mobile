@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:ecommerce/services/request.dart';
+import 'package:store_hive/services/request.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -33,9 +33,7 @@ class OrderItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 5),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12)
-      ),
+          color: Colors.white, borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         contentPadding: EdgeInsets.all(12),
         leading: Badge(

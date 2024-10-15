@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:ecommerce/controllers/cart_notifier.dart';
+import 'package:store_hive/controllers/cart_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -36,7 +36,7 @@ class CartCard extends StatelessWidget {
   void decreaseQty(CartNotifier cartNotifier) {
     if (product.quantity! > 1) {
       final int currentQuantity = product.quantity ?? 0;
-    cartNotifier.updateQuantity(product, currentQuantity - 1);
+      cartNotifier.updateQuantity(product, currentQuantity - 1);
     }
   }
 

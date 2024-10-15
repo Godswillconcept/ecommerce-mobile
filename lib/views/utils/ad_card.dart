@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 
 class AdCard extends StatefulWidget {
   AdCard({
@@ -28,31 +28,32 @@ class _AdCardState extends State<AdCard> {
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Column(
         children: <Widget>[
-          CarouselSlider(
-            items: _images.map((image) {
-              return Container(
-                margin: EdgeInsets.all(5.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                  child: Image.asset(
-                    image,
-                    fit: BoxFit.cover,
-                    width: double.maxFinite,
-                  ),
-                ),
-              );
-            }).toList(),
-            options: CarouselOptions(
-              autoPlay: true,
-              enlargeCenterPage: true,
-              aspectRatio: 495 / 171,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _current = index;
-                });
-              },
-            ),
-          ),
+          // CarouselSlider(
+          //   items: _images.map((image) {
+          //     return Container(
+          //       margin: EdgeInsets.all(5.0),
+          //       child: ClipRRect(
+          //         borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          //         child: Image.asset(
+          //           image,
+          //           fit: BoxFit.cover,
+          //           width: double.maxFinite,
+          //         ),
+          //       ),
+          //     );
+          //   }).toList(),
+          //   options: CarouselOptions(
+          //     autoPlay: true,
+          //     enlargeCenterPage: true,
+          //     aspectRatio: 495 / 171,
+          //     onPageChanged: (index, reason) {
+          //       setState(() {
+          //         _current = index;
+          //       });
+          //     },
+          //   ),
+          // ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: _images.map((image) {
