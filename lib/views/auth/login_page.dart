@@ -173,13 +173,13 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         _loginUser();
                       },
-                      style: ButtonStyle(
-                        minimumSize: WidgetStateProperty.all<Size>(
-                          Size(double.infinity, 50),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        backgroundColor: WidgetStateProperty.all<Color>(
-                          Color(0xff003cc5),
-                        ),
+                        foregroundColor: Colors.white,
+                        backgroundColor: Color(0xff003cc5),
                       ),
                       child: Text("Login"),
                     ),
@@ -203,7 +203,9 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/forgot-password');
+                          },
                           child: Text(
                             'Forgot Password',
                             style: TextStyle(

@@ -20,6 +20,7 @@ import 'models/user.dart';
 import 'services/request.dart';
 import 'views/auth/login_page.dart';
 import 'views/auth/signup_page.dart';
+import 'views/auth/forgot_password_page.dart';
 import 'views/components/notification_page.dart';
 import 'views/start_page.dart';
 
@@ -126,6 +127,9 @@ class MyApp extends StatelessWidget {
         },
         "/notifications": (context) {
           return NotificationPage();
+        },
+        "/forgot-password": (context) {
+          return const ForgotPasswordPage();
         },
       },
     );

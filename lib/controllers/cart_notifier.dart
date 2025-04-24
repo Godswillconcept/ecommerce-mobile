@@ -21,7 +21,9 @@ class CartNotifier with ChangeNotifier {
   }
   // Save the cart to the cartBox
   Future<void> saveCart() async {
-    final cart = Cart(products: cartProducts,);
+    final cart = Cart(
+      products: cartProducts,
+    );
     await _cartBox.put(0, cart);
   }
 

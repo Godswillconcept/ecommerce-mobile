@@ -13,7 +13,7 @@ class AdCard extends StatefulWidget {
 }
 
 class _AdCardState extends State<AdCard> {
-  int _current = 0;
+  final int _current = 0;
 
   final List<String> _images = [
     "images/banners/01.jpg",
