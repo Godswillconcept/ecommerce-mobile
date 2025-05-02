@@ -2,13 +2,10 @@
 
 import 'package:store_hive/controllers/cart_notifier.dart';
 import 'package:store_hive/controllers/order_notifier.dart';
-import 'package:store_hive/services/request.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 import '../controllers/product_notifier.dart';
-import '../models/user.dart';
 import 'utils/constant.dart';
 import 'nav-pages/cart_page.dart';
 import 'nav-pages/home_page.dart';
@@ -35,7 +32,6 @@ class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppbar(context),
       body: _widgetOptions.elementAt(_currentIndex),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
@@ -94,50 +90,4 @@ class _StartPageState extends State<StartPage> {
       ),
     );
   }
-}
-
-AppBar buildAppbar(BuildContext context) {
-  final userInfo = Hive.box<User>("userBox");
-  final userDetail = userInfo.values.elementAt(0);
-  return AppBar(
-    elevation: 0,
-    backgroundColor: appBarBg,
-    leading: Padding(
-      padding: const EdgeInsets.only(left: 12.0),
-      child: InkWell(
-        onTap: () => Navigator.pushNamed(context, '/profile'),
-        child: CircleAvatar(
-          backgroundColor: Colors.grey,
-          backgroundImage: NetworkImage(baseUrl + userDetail.image!),
-        ),
-      ),
-    ),
-    title: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Hey ${userDetail.name}',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(height: 4),
-        Text(
-          'Let\'s search your shopping needs.',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-          ),
-        ),
-      ],
-    ),
-    actions: [
-      IconButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/notifications');
-        },
-        icon: Icon(Icons.notifications_active_sharp),
-      )
-    ],
-  );
 }

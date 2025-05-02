@@ -5,7 +5,7 @@ import 'package:hive/hive.dart';
 part 'product.g.dart';
 
 @HiveType(typeId: 2)
-class Product extends HiveObject{
+class Product extends HiveObject {
   @HiveField(0)
   String name;
   @HiveField(1)
@@ -68,4 +68,17 @@ class Product extends HiveObject{
 
   factory Product.fromJson(String source) =>
       Product.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  get discount => null;
+
+  get category => null;
+
+  get rating => null;
+
+  get reviewCount => null;
+
+  @override
+  String toString() {
+    return 'Product(name: $name, brand: $brand, description: $description, categoryId: $categoryId, id: $id, price: $price, image: $image, quantity: $quantity, stocks: $stocks)';
+  }
 }

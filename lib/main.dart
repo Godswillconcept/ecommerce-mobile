@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:store_hive/views/components/profile/user_screen.dart';
+import 'package:store_hive/views/components/profile/profile_page.dart';
+import 'package:store_hive/views/nav-pages/cart_page.dart';
 import 'package:store_hive/views/nav-pages/order_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -31,6 +32,7 @@ Future main() async {
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(CartAdapter());
   Hive.registerAdapter(ProductAdapter());
+  Hive.registerAdapter(CategoryAdapter());
   final userBox = await Hive.openBox<User>("userBox");
   final cartBox = await Hive.openBox<Cart>('cartBox');
   final user = userBox.get(0);
@@ -120,7 +122,7 @@ class MyApp extends StatelessWidget {
           return const StartPage();
         },
         "/profile": (context) {
-          return UserScreen();
+          return ProfilePage();
         },
         "/orders": (context) {
           return OrderPage();
@@ -130,6 +132,9 @@ class MyApp extends StatelessWidget {
         },
         "/forgot-password": (context) {
           return const ForgotPasswordPage();
+        },
+        "/cart": (context) {
+          return const CartPage();
         },
       },
     );

@@ -247,7 +247,7 @@ class _LoginPageState extends State<LoginPage> {
         },
       );
       //request to the server
-      final response = await post('login', login.toMap());
+      final response = await post('auth/login', login.toMap());
       if (response.data['success'] != null) {
         _userBox.add(User.fromMap(response.data['success']));
         final userId = _userBox.values.elementAt(0).id;

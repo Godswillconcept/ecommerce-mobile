@@ -504,7 +504,7 @@ class _SignupPageState extends State<SignupPage> {
       formData.files
           .add(MapEntry('image', MultipartFile.fromFileSync(_image!.path)));
 
-      final response = await post('signup', formData);
+      final response = await post('auth/signup', formData);
       if (response.data['success'] != null) {
         _userBox.add(User.fromMap(response.data['success']));
         final userId = _userBox.values.elementAt(0).id;

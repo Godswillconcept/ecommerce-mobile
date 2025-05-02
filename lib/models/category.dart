@@ -1,12 +1,27 @@
 import 'dart:convert';
+import 'package:hive/hive.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class Category {
+part 'category.g.dart';
+
+@HiveType(typeId: 3)
+class Category extends HiveObject {
+  @HiveField(0)
   int? id;
+
+  @HiveField(1)
   String name;
+
+  @HiveField(2)
   int? parentId;
+
+  @HiveField(3)
   String description;
+
+  @HiveField(4)
   String? icon;
+
+  @HiveField(5)
   List<Category> children;
   Category({
     this.id,
@@ -14,7 +29,7 @@ class Category {
     this.parentId,
     required this.description,
     this.icon,
-    required this.children,
+    this.children = const [],
   });
 
   Map<String, dynamic> toMap() {
@@ -35,11 +50,18 @@ class Category {
       parentId: map['parentId'] != null ? map['parentId'] as int : null,
       description: map['description'] as String,
       icon: map['icon'] != null ? map['icon'] as String : null,
-      children: List<Category>.from((map['children'] as List).map<Category>((x) => Category.fromMap(x as Map<String,dynamic>),),),
+      children: map['children'] != null 
+          ? List<Category>.from(
+              (map['children'] as List).map<Category>(
+                (x) => Category.fromMap(x as Map<String, dynamic>),
+              ),
+            )
+          : [],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Category.fromJson(String source) => Category.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Category.fromJson(String source) =>
+      Category.fromMap(json.decode(source) as Map<String, dynamic>);
 }

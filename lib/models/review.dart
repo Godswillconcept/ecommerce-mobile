@@ -1,48 +1,77 @@
-import 'dart:convert';
+import 'package:intl/intl.dart';
 
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class Review {
-  int? id;
-  int productId;
-  int userId;
-  String rating;
-  String? comment;
-  DateTime? reviewDate;
+  final String id;
+  final String productId;
+  final String userId;
+  final double rating;
+  final String comment;
+  final DateTime reviewDate;
+
+  // User info - these would typically come from a user service or be included in the review response
+  String? userName;
+  String? userAvatar;
+
   Review({
-    this.id,
+    required this.id,
     required this.productId,
     required this.userId,
     required this.rating,
-    this.comment,
-    DateTime? reviewDate,
-  }) : reviewDate = reviewDate ?? DateTime.now();
+    required this.comment,
+    required this.reviewDate,
+    this.userName,
+    this.userAvatar,
+  });
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
-      'product_id': productId,
-      'user_id': userId,
-      'rating': rating,
-      'comment': comment,
-      'review_date': reviewDate?.toIso8601String(),
-    };
-  }
+  factory Review.fromJson(Map<String, dynamic> json) {
+    // Parse the review date, handling various formats
+    DateTime reviewDate;
+    try {
+      reviewDate = DateTime.parse(json['review_date']);
+    } catch (e) {
+      reviewDate = DateTime.now(); // Fallback to now if parsing fails
+    }
 
-  factory Review.fromMap(Map<String, dynamic> map) {
     return Review(
-      id: map['id'] != null ? map['id'] as int : null,
-      productId: map['product_id'] as int,
-      userId: map['user_id'] as int,
-      rating: map['rating'] as String,
-      comment: map['comment'] != null ? map['comment'] as String : null,
-      reviewDate: map['review_date'] != null
-          ? DateTime.parse(map['reviewDate'] as String)
-          : null,
+      id: json['_id'] ?? '',
+      productId: json['product_id'] ?? '',
+      userId: json['user_id'] ?? '',
+      rating: (json['rating'] is int)
+          ? (json['rating'] as int).toDouble()
+          : json['rating']?.toDouble() ?? 0.0,
+      comment: json['comment'] ?? '',
+      reviewDate: reviewDate,
+      // These fields might not be present in the API response
+      // In a real app, you might need to fetch user info separately or have it included in the API
+      userName: json['user_name'] ?? 'Anonymous',
+      userAvatar: json['user_avatar'] ??
+          'https://randomuser.me/api/portraits/lego/1.jpg',
     );
   }
 
-  String toJson() => json.encode(toMap());
+  // Get a user-friendly date format
+  String getFormattedDate() {
+    final now = DateTime.now();
+    final difference = now.difference(reviewDate);
 
-  factory Review.fromJson(String source) =>
-      Review.fromMap(json.decode(source) as Map<String, dynamic>);
+    // If less than a day, show "today" or "X hours ago"
+    if (difference.inDays < 1) {
+      if (difference.inHours < 1) {
+        return '${difference.inMinutes} minutes ago';
+      }
+      return '${difference.inHours} hours ago';
+    }
+    // If less than a week, show "X days ago"
+    else if (difference.inDays < 7) {
+      return '${difference.inDays} days ago';
+    }
+    // If less than a month, show "X weeks ago"
+    else if (difference.inDays < 30) {
+      return '${(difference.inDays / 7).floor()} weeks ago';
+    }
+    // Otherwise show the date
+    else {
+      return DateFormat('MMM d, yyyy').format(reviewDate);
+    }
+  }
 }

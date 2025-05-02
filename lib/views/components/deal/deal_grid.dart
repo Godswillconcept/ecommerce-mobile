@@ -19,19 +19,20 @@ class DealGrid extends StatelessWidget {
           builder: (context, productNotifier, child) {
             final product = productNotifier.productList[i];
             return InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ProductDetail(
-                        product: product,
-                      );
-                    },
-                  ),
-                );
-              },
-              child: ProductCard(product: product,)
-            );
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ProductDetail(
+                          product: product,
+                        );
+                      },
+                    ),
+                  );
+                },
+                child: ProductCard(
+                  product: product,
+                ));
           },
         );
       },
@@ -39,8 +40,8 @@ class DealGrid extends StatelessWidget {
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        mainAxisSpacing: 20.0,
-        crossAxisSpacing: 20.0,
+        mainAxisSpacing: 10.0,
+        crossAxisSpacing: 10.0,
         childAspectRatio: 3 / 4,
       ),
     );
